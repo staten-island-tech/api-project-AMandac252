@@ -18,4 +18,19 @@ const fetchpokemon = () => {
 
 fetchpokemon();
 
-// export { fetchpokemon };
+async function getData(url) {
+  try {
+    const response = await fetch(url);
+    if (response.status < 200 || response.status > 299) {
+      throw new Error(await response);
+    } else {
+      const data = await response.json();
+      document.getElementById("api-response").textContent = data.content;
+
+      console.log("subject");
+    }
+  } catch (error) {
+    console.log(error);
+    console.log("no subject");
+  }
+}

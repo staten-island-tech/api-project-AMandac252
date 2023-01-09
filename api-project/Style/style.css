@@ -21,30 +21,27 @@
   /*  colors  */
   --black: #000;
   
-  --light-blue: #ABD3D8;
-  --mid-blue: #589DB3;
-  --dark-blue:rgba(29, 133, 168, 0.63);
+  --light-yellow:#fffdf7;
+  --mid-yellow:#fae588;
+  --dark-yellow:  #f9dc5c;
   
-  --light-gray: #ACA7BB;
-  --mid-gray: #84848A;
-  --dark-red: rgba(123, 106, 147, 0.63);
-
-  --gray: #252c30;
+ 
 }
  .warm {
-   --primary: var(--light-gray);
-   --secondary: var(--mid-gray);
-   --tertiary:var(--dark-red); 
+   --primary: var(--light-yellow);
+   --secondary: var(--mid-yellow);
+   --tertiary:var(--dark-yellow); 
    
 
    }
+/*
  .cool {
    --primary: var(--light-blue);
    --secondary: var(--mid-blue);
    --tertiary: var(--dark-blue);
    
  }
-
+ */
 body{
    background-color: #f3f5f9;
    body{
@@ -168,14 +165,14 @@ body{
   margin-bottom: 20px;
 }
 
-.angel-btn:hover, .vampire-btn:hover, .ori-btn:hover, .cover-btn:hover, .all-btn:hover{
+/* .angel-btn:hover, .vampire-btn:hover, .ori-btn:hover, .cover-btn:hover, .all-btn:hover{
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem var(--secondary);
 }
 .angel-btn:active, .vampire-btn:active, .ori-btn:active, .cover-btn:active, .all-btn:active{
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem var(--secondary); 
-}
+} */
 
 .link-btn{
   padding: 1rem 2rem;
