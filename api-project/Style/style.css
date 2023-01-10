@@ -24,24 +24,49 @@
   --light-yellow:#fffdf7;
   --mid-yellow:#fae588;
   --dark-yellow:  #f9dc5c;
+
+  --light-red: #ff4d6d;
+  --mid-red: #e5383b;
+  --dark-red: #ba181b;
+
+  --light-blue: #caf0f8;
+  --mid-blue: #48cae4;
+  --dark-blue: #0096c7;
+
+  --light-green: #d8f3dc;
+  --mid-green: #74c69d;
+  --dark-green: #52b788;
   
  
 }
- .warm {
+ .home {
    --primary: var(--light-yellow);
    --secondary: var(--mid-yellow);
    --tertiary:var(--dark-yellow); 
-   
 
    }
-/*
- .cool {
+
+   .poke {
+    --primary: var(--light-red);
+    --secondary: var(--mid-red);
+    --tertiary: var(--dark-red);
+    
+  }
+
+ .shop {
    --primary: var(--light-blue);
    --secondary: var(--mid-blue);
    --tertiary: var(--dark-blue);
    
  }
- */
+
+ .regions {
+  --primary: var(--light-green);
+  --secondary: var(--mid-green);
+  --tertiary: var(--dark-green);
+  
+}
+
 body{
    background-color: #f3f5f9;
    body{

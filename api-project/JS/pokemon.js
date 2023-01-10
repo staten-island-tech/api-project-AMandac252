@@ -34,3 +34,5 @@ async function getData(url) {
     console.log("no subject");
   }
 }
+
+export { fetchpokemon };
