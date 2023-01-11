@@ -1,6 +1,6 @@
 const fetchitems = () => {
   const promises = [];
-  for (let i = 1; i < 490; i++) {
+  for (let i = 1; i < 400; i++) {
     const url = `https://pokeapi.co/api/v2/item/${i}`;
     promises.push(fetch(url).then((res) => res.json()));
   }

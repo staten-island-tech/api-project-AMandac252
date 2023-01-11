@@ -70,9 +70,7 @@
 
 body{
    background-color: var(--primary);
-   body{
-    background-repeat: no-repeat;
-    background-position: top;
+  
   }
   
   
@@ -102,7 +100,6 @@ body{
   h5 {
     text-align: center;
   }
-}
 
 .wrapper{
   display: flex;

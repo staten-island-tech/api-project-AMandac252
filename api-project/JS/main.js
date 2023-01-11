@@ -26,11 +26,11 @@ function changeLi() {
   });
 }
 changeLi();
-
+/* 
 DOMSelectors.pokemon.addEventListener("click", function () {
   pokemon();
   console.log("pokemon");
-});
+}); */
 
 // /* FUCNTION LIBRARY */
 
