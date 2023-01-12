@@ -6,6 +6,7 @@ import "../JS/region.js";
 import AOS from "aos";
 ``;
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { fetchpokemon } from "../JS/pokemon.js";
 // ..
 AOS.init();
 
@@ -26,19 +27,33 @@ DOMSelectors.home.addEventListener("click", function () {
 DOMSelectors.pokemon.addEventListener("click", function () {
   poke();
   pokeintro();
+  search();
+  fetchpokemon();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
   item();
   shopintro();
+  search();
 });
 
 DOMSelectors.region.addEventListener("click", function () {
   region();
   regionintro();
+  search();
 });
 
 /* FUCNTION LIBRARY */
+
+function search() {
+  DOMSelectors.maininfo.insertAdjacentHTML(
+    "beforeend",
+
+    `<div data-aos="fade-up" class="topnav">
+            <a><i class="fas fa-search"></i><input class="search" type="text" placeholder="Search.."></a>
+    </div>`
+  );
+}
 
 function home() {
   document.body.classList.add("home");
@@ -115,19 +130,3 @@ function regionintro() {
     </div>`
   );
 }
-
-// function pokemon() {
-//   DOMSelectors.display.innerHTML = "";
-//   songlist.forEach((data) => {
-//     DOMSelectors.display.insertAdjacentHTML(
-//       "beforeend",
-
-//       `<div data-aos="fade-down" class="display-card">
-//             <img class="display-img" src="${data.image}" />
-//             <h3 class="display-title">${data.name}</h3>
-//             <h4 class="display-release">${data.id}</h4>
-//             <a href=${data.type} target ="blank">
-//         </div>`
-//     );
-//   });
-// }

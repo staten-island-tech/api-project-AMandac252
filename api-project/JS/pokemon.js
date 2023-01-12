@@ -28,7 +28,7 @@ async function fetchpokemon() {
     throw error(response);
   } else {
     const pokemon = await response.json();
-    pokemon();
+
     pokemon.data.forEach((data) => {
       DOMSelectors.display.insertAdjacentHTML(
         "afterbegin",
