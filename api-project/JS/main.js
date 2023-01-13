@@ -1,17 +1,14 @@
 import "../Style/style.css";
-import "../JS/pokemon.js";
-import "../JS/items.js";
-import "../JS/region.js";
+import { fetchpokemon } from "../JS/pokemon.js";
 
 import AOS from "aos";
 ``;
 import "aos/dist/aos.css"; // You can also use <link> for styles
-import { fetchpokemon } from "../JS/pokemon.js";
 // ..
 AOS.init();
 
 const DOMSelectors = {
-  maininfo: document.querySelector(".main-info"),
+  maininfo: document.querySelector(".title-card"),
   display: document.querySelector(".display"),
   home: document.querySelector(".home-btn"),
   pokemon: document.querySelector(".poke-btn"),
@@ -28,7 +25,6 @@ DOMSelectors.pokemon.addEventListener("click", function () {
   poke();
   pokeintro();
   search();
-  fetchpokemon();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
@@ -50,7 +46,7 @@ function search() {
     "beforeend",
 
     `<div data-aos="fade-up" class="topnav">
-            <a><i class="fas fa-search"></i><input class="search" type="text" placeholder="Search.."></a>
+            <a></i><input class="search" type="text" placeholder="Search.."></a>
     </div>`
   );
 }
@@ -69,8 +65,15 @@ function homeintro() {
 
     `<div data-aos="fade-up" class="display-card">
       <h3 class="info">Welcome to the home </h3>
-      <p>IDK why i added this, this is very usless</p>
-    </div>`
+    </div>
+    
+    <div data-aos="fade-up" class="display-card">
+              <h3 class="info">Overview</h3>
+              <p>This website takes all its information from the pokemon api {poke api}.
+              </p>
+
+              <p>The search bar is there for aesthetics </p>
+            </div>`
   );
 }
 
@@ -91,6 +94,11 @@ function pokeintro() {
       <p>There are about 905 pokemon present -> you can search them up</p>
     </div>`
   );
+}
+
+function displaypoke() {
+  DOMSelectors.display.innerHTML = "";
+  fetchpokemon();
 }
 
 function item() {
