@@ -1,5 +1,7 @@
 import "../Style/style.css";
 import { fetchpokemon } from "../JS/pokemon.js";
+import { fetchitem } from "../JS/items.js";
+import { fetchlocations } from "../JS/locations.js";
 
 import AOS from "aos";
 ``;

@@ -1,6 +1,6 @@
-const URL = `https://pokeapi.co/api/v2/item/1`;
+const URL = `https://pokeapi.co/api/v2/location/1`;
 
-async function fetchitem(URL) {
+async function fetchlocations(URL) {
   try {
     const response = await fetch(URL);
     const data = await response.json();
@@ -8,9 +8,8 @@ async function fetchitem(URL) {
       "beforeend",
 
       `<div data-aos="fade-up" class="display-card2">
-    <img class="display-sprite" src="${data.sprites.default}" />
     <h4 class="display-name">${data.name}</h4>
-    <p class="display-description">${data.effect_entries[0].effect}</p>
+    <h5 class="display-region"> Region: ${data.region.name}</>
 
     </div> `
     );
@@ -20,6 +19,6 @@ async function fetchitem(URL) {
     console.log(error);
   }
 }
-fetchitem(URL);
+fetchlocations(URL);
 
-export { fetchitem };
+export { fetchlocations };
