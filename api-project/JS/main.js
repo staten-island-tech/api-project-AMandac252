@@ -1,5 +1,7 @@
 import "../Style/style.css";
 import { fetchpokemon } from "../JS/pokemon.js";
+import { fetchitems } from "../JS/items.js";
+import { fetchlocations } from "../JS/locations.js";
 
 import AOS from "aos";
 ``;
@@ -25,19 +27,21 @@ DOMSelectors.pokemon.addEventListener("click", function () {
   poke();
   pokeintro();
   search();
-  arrowkeys();
+  fetchpokemon();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
   item();
   shopintro();
   search();
+  fetchitems();
 });
 
 DOMSelectors.region.addEventListener("click", function () {
   region();
   regionintro();
   search();
+  fetchlocations();
 });
 
 /* FUCNTION LIBRARY */
@@ -87,6 +91,7 @@ function poke() {
 
 function pokeintro() {
   DOMSelectors.maininfo.innerHTML = "";
+  DOMSelectors.display.innerHTML = "";
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
@@ -106,6 +111,7 @@ function item() {
 
 function shopintro() {
   DOMSelectors.maininfo.innerHTML = "";
+  DOMSelectors.display.innerHTML = "";
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
@@ -125,6 +131,7 @@ function region() {
 
 function regionintro() {
   DOMSelectors.maininfo.innerHTML = "";
+  DOMSelectors.display.innerHTML = "";
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
