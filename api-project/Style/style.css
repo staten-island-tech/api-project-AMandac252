@@ -252,6 +252,7 @@ body{
 
 .display-card2:hover {
   transform: translateY(-0.5rem);
+  background-color: var(--secondary);
 }
 .display-sprite {
   padding: 5%;
@@ -289,6 +290,7 @@ body{
 .search .search-btn a:hover {
   background-color: #ddd;
   color: var(--primary);
+  
 }
 
 .search input[type=text] {
@@ -297,6 +299,26 @@ body{
   border: none;
   margin-top: 8px;
   margin-right: 20px;
-  font-size: 17px;
+  font-size: 60px;
 }
 
+.arrow{
+  justify-content: center;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  font-size: var(--h5);
+  padding: 30px;
+  margin: 2px;
+  width: 45%;
+  background-color: var(--tertiary);
+  border: none;
+  border-radius: 30px;
+  color: var(--primary);
+  transition: all 0.2s;
+}
+
+.arrow:hover{
+  transform: translateY(-0.5rem);
+  background-color: var(--secondary);
+}

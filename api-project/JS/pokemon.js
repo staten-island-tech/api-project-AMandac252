@@ -1,27 +1,34 @@
-const URL = `https://pokeapi.co/api/v2/pokemon/1`;
+async function fetchpokemon() {
+  const pokedex = [];
+  for (let i = 1; i <= 100000; i++) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+    pokedex.push(fetch(url).then((res) => res.json()));
+  }
+  Promise.all(pokedex).then((results) => {
+    const pokemon = results.map((result) => ({
+      name: result.name,
+      image: result.sprites["front_default"],
+      type: result.types.map((type) => type.type.name).join(", "),
+    }));
+    displayPokemon(pokemon);
+  });
+}
 
-async function fetchpokemon(URL) {
-  try {
-    const response = await fetch(URL);
-    const data = await response.json();
+const displayPokemon = (pokemon) => {
+  console.log(pokemon);
+  const data = pokemon.map((pokeman) =>
     document.getElementById("display").insertAdjacentHTML(
       "beforeend",
 
       `<div data-aos="fade-up" class="display-card2">
-<img class="display-sprite" src="${data.sprites.front_default}" />
-<h4 class="display-name">${data.name}</h4>
-<h5 class="display-type"> type: ${data.types
-        .map((type) => type.type.name)
-        .join(", ")}</>
+      <img class="display-sprite" src="${pokemon.image}" />
+      <h4 class="display-name">${pokemon.name}</h4>
+      <h5 class="display-type"> type: ${pokemon.types}</h5>
+      </div> `
+    )
+  );
+};
 
-</div> `
-    );
-
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
-fetchpokemon(URL);
+fetchpokemon();
 
 export { fetchpokemon };

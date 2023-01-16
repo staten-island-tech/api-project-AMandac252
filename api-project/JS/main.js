@@ -1,7 +1,5 @@
 import "../Style/style.css";
 import { fetchpokemon } from "../JS/pokemon.js";
-import { fetchitem } from "../JS/items.js";
-import { fetchlocations } from "../JS/locations.js";
 
 import AOS from "aos";
 ``;
@@ -27,6 +25,7 @@ DOMSelectors.pokemon.addEventListener("click", function () {
   poke();
   pokeintro();
   search();
+  arrowkeys();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
@@ -93,14 +92,9 @@ function pokeintro() {
 
     `<div data-aos="fade-up" class="display-card">
       <h3 class="info">Welcome to the PC </h3>
-      <p>There are about 905 pokemon present -> you can search them up</p>
+      <p>There are about 150 pokemon present -> you can search them up</p>
     </div>`
   );
-}
-
-function displaypoke() {
-  DOMSelectors.display.innerHTML = "";
-  fetchpokemon();
 }
 
 function item() {
