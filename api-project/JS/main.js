@@ -16,6 +16,8 @@ const DOMSelectors = {
   pokemon: document.querySelector(".poke-btn"),
   item: document.querySelector(".item-btn"),
   region: document.querySelector(".region-btn"),
+  searchInput: document.getElementsByClassName(".search"),
+  pokemonnames: document.querySelector("pokemon"),
 };
 
 DOMSelectors.home.addEventListener("click", function () {
@@ -28,6 +30,7 @@ DOMSelectors.pokemon.addEventListener("click", function () {
   pokeintro();
   search();
   fetchpokemon();
+  searches();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
@@ -56,6 +59,38 @@ function search() {
   );
 }
 
+function searches() {
+  DOMSelectors.searchInput.addEventListener("keyup", (event) => {
+    const { value } = event.target;
+
+    const searchQuery = value.toLowerCase();
+
+    for (const pokemonnames of pokemon) {
+      let name = pokemonnames.textcontent.toLowerCase();
+
+      if (name.includes(searchQuery)) {
+        pokemon.display.insertAdjacentHTML(
+          "beforeend",
+
+          `<div data-aos="fade-up" class="display-card2">
+  <img class="display-sprite" src="${pokemon.sprites.front_default}" />
+  <h4 class="display-name">${pokemon.name}</h4>
+  <h5 class="display-type"> type: ${pokemon.types
+    .map((type) => type.type.name)
+    .join(", ")}</>`
+        );
+      } else {
+        DOMSelectors.display.insertAdjacentHTML(
+          "beforeend",
+          `<div data-aos="fade-up" class="display-card2">
+            <h4>The pokemon that you are trying to find does not exsist...</h4> 
+          </div>`
+        );
+      }
+    }
+  });
+}
+
 function home() {
   document.body.classList.add("home");
   document.body.classList.remove("poke");
@@ -65,6 +100,7 @@ function home() {
 
 function homeintro() {
   DOMSelectors.maininfo.innerHTML = "";
+  DOMSelectors.display.innerHTML = "";
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
@@ -73,12 +109,12 @@ function homeintro() {
     </div>
     
     <div data-aos="fade-up" class="display-card">
-              <h3 class="info">Overview</h3>
-              <p>This website takes all its information from the pokemon api {poke api}.
-              </p>
+    <h3 class="info">Overview</h3>
+    <p>This website takes all its information from the pokemon api {poke api}.
+    </p>
 
-              <p>The search bar is there for aesthetics </p>
-            </div>`
+    <p>The search bar is there for aesthetics </p>
+  </div>`
   );
 }
 
