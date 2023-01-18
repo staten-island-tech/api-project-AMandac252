@@ -30,7 +30,6 @@ DOMSelectors.pokemon.addEventListener("click", function () {
   pokeintro();
   search();
   fetchpokemon();
-  searches();
 });
 
 DOMSelectors.item.addEventListener("click", function () {
@@ -54,41 +53,9 @@ function search() {
     "beforeend",
 
     `<div data-aos="fade-up" class="topnav">
-            <a></i><input class="search" type="text" placeholder="Search.."></a>
+            <a></i><input class="search" id = "searchbar" type="text" placeholder="Search.."></a>
     </div>`
   );
-}
-
-function searches() {
-  DOMSelectors.searchInput.addEventListener("keyup", (event) => {
-    const { value } = event.target;
-
-    const searchQuery = value.toLowerCase();
-
-    for (const pokemonnames of pokemon) {
-      let name = pokemonnames.textcontent.toLowerCase();
-
-      if (name.includes(searchQuery)) {
-        pokemon.display.insertAdjacentHTML(
-          "beforeend",
-
-          `<div data-aos="fade-up" class="display-card2">
-  <img class="display-sprite" src="${pokemon.sprites.front_default}" />
-  <h4 class="display-name">${pokemon.name}</h4>
-  <h5 class="display-type"> type: ${pokemon.types
-    .map((type) => type.type.name)
-    .join(", ")}</>`
-        );
-      } else {
-        DOMSelectors.display.insertAdjacentHTML(
-          "beforeend",
-          `<div data-aos="fade-up" class="display-card2">
-            <h4>The pokemon that you are trying to find does not exsist...</h4> 
-          </div>`
-        );
-      }
-    }
-  });
 }
 
 function home() {

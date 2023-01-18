@@ -227,6 +227,7 @@ body{
   background-color: var(--tertiary);
   transition: all 0.2s;
   padding: 3rem;
+  color: var(--white);
   
 }
 
@@ -300,7 +301,7 @@ body{
   font-size: 60px;
 }
 
-.arrow{
+/* .arrow{
   justify-content: center;
   justify-content: space-around;
   text-align: center;
@@ -319,4 +320,5 @@ body{
 .arrow:hover{
   transform: translateY(-0.5rem);
   background-color: var(--secondary);
-}
+} */
+

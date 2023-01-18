@@ -1,6 +1,6 @@
 async function fetchpokemon() {
   let pokemons = [];
-  for (let i = 1; i < 19; i++) {
+  for (let i = 1; i < 151; i++) {
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     const response = await fetch(url);
     if (response.status < 200 || response.status > 299) {
@@ -9,6 +9,7 @@ async function fetchpokemon() {
     } else {
       const pokemon = await response.json();
       pokemons.push(pokemon);
+      console.log(pokemon);
       document.getElementById("display").insertAdjacentHTML(
         "beforeend",
 
