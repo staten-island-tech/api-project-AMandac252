@@ -1,6 +1,6 @@
 async function fetchitems() {
   let item = [];
-  for (let i = 1; i < 19; i++) {
+  for (let i = 1; i < 667; i++) {
     let url = `https://pokeapi.co/api/v2/item/${i}`;
     const response = await fetch(url);
     if (response.status < 200 || response.status > 299) {
@@ -15,7 +15,7 @@ async function fetchitems() {
         `<div data-aos="fade-up" class="display-card2">
 <img class="display-sprite" src="${items.sprites.default}" />
 <h4 class="display-name">${items.name}</h4>
-<h5 class="display-descrtiption"> ${items.effect_entries[0].effect}</>`
+<p class="display-descrtiption"> ${items.effect_entries[0].effect}</p>`
       );
     }
   }

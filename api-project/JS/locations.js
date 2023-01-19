@@ -1,6 +1,6 @@
 async function fetchlocations() {
   let location = [];
-  for (let i = 1; i < 19; i++) {
+  for (let i = 1; i < 65; i++) {
     let url = `https://pokeapi.co/api/v2/location-area/${i}`;
     const response = await fetch(url);
     if (response.status < 200 || response.status > 299) {

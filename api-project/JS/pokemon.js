@@ -9,7 +9,6 @@ async function fetchpokemon() {
     } else {
       const pokemon = await response.json();
       pokemons.push(pokemon);
-      console.log(pokemon);
       document.getElementById("display").insertAdjacentHTML(
         "beforeend",
 
