@@ -17,7 +17,7 @@ async function fetchpokemon() {
 <h4 class="display-name">${pokemon.name}</h4>
 <h5 class="display-type"> type: ${pokemon.types
           .map((type) => type.type.name)
-          .join(", ")}</>`
+          .join(", ")}</h5>`
       );
     }
   }
