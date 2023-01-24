@@ -1,3 +1,5 @@
+document.getElementById("display").innerHTML = "";
+
 async function fetchpokemon() {
   let pokemons = [];
   for (let i = 1; i < 151; i++) {
@@ -10,23 +12,20 @@ async function fetchpokemon() {
     } else {
       const pokemon = await response.json();
       pokemons.push(pokemon);
-      showpokemon(pokemon);
     }
   }
-}
-fetchpokemon();
+  pokemons.forEach((pokemon) => {
+    document.getElementById("display").insertAdjacentHTML(
+      "beforeend",
 
-function showpokemon(pokemon) {
-  document.getElementById("display").insertAdjacentHTML(
-    "beforeend",
-
-    `<div data-aos="fade-up" class="display-card2">
-<img class="display-sprite" src="${pokemon.sprites.front_default}" />
-<h4 class="display-name">${pokemon.name}</h4>
-<h5 class="display-type"> type: ${pokemon.types
-      .map((type) => type.type.name)
-      .join(", ")}</h5>`
-  );
+      `<div data-aos="fade-up" class="display-card2">
+  <img class="display-sprite" src="${pokemon.sprites.front_default}" />
+  <h4 class="display-name">${pokemon.name}</h4>
+  <h5 class="display-type"> type: ${pokemon.types
+    .map((type) => type.type.name)
+    .join(", ")}</h5>`
+    );
+  });
 }
 
 export { fetchpokemon };

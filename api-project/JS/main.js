@@ -92,7 +92,6 @@ function poke() {
 function pokeintro() {
   DOMSelectors.maininfo.innerHTML = "";
   DOMSelectors.display.innerHTML = "";
-  fetchpokemon();
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
@@ -101,6 +100,7 @@ function pokeintro() {
       <p>There are about 150 pokemon present -> you can search them up</p>
     </div>`
   );
+  fetchpokemon();
 }
 
 function item() {
@@ -114,7 +114,6 @@ function shopintro() {
   DOMSelectors.maininfo.innerHTML = "";
   DOMSelectors.display.innerHTML = "";
 
-  fetchitems();
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
 
@@ -123,6 +122,7 @@ function shopintro() {
       <p>There are about 200+ items present -> you can search them up</p>
     </div>`
   );
+  fetchitems();
 }
 
 function region() {
@@ -135,7 +135,6 @@ function region() {
 function regionintro() {
   DOMSelectors.maininfo.innerHTML = "";
   DOMSelectors.display.innerHTML = "";
-  fetchlocations();
 
   DOMSelectors.maininfo.insertAdjacentHTML(
     "beforeend",
@@ -145,4 +144,5 @@ function regionintro() {
       <p>There are about 20 locations present -> you can search them up</p>
     </div>`
   );
+  fetchlocations();
 }
