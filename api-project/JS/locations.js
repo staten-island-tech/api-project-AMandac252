@@ -37,7 +37,7 @@ function showlocations(location) {
 
       `<div data-aos="fade-up" class="display-card2">
   <h3 class="display-name">${locations.name}</h3>
-  <h4 class ="display-region">${locations.region}</h4>
+
   <h5 class="display-Encountors"> pokemon encounters: ${locations.pokemon_encounters[0].pokemon.name}</>`
     );
   });
