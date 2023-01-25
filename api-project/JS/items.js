@@ -2,6 +2,7 @@ document.getElementById("display").innerHTML = "";
 
 async function fetchitems() {
   let item = [];
+  loading();
   for (let i = 1; i < 667; i++) {
     let url = `https://pokeapi.co/api/v2/item/${i}`;
     const response = await fetch(url);
@@ -13,6 +14,25 @@ async function fetchitems() {
       item.push(items);
     }
   }
+  document.getElementById("display").innerHTML = "";
+  showitems(item);
+}
+function loading() {
+  document.getElementById("display").insertAdjacentHTML(
+    "beforeend",
+
+    `<div class="col-3">
+    <div class="snippet">
+      <div class="stage">
+        <div class="dot-flashing"></div>
+      </div>
+    </div>
+  </div>`
+  );
+}
+
+function showitems(item) {
+  document.getElementById("display").innerHTML = "";
   item.forEach((items) => {
     document.getElementById("display").insertAdjacentHTML(
       "beforeend",
@@ -24,5 +44,4 @@ async function fetchitems() {
     );
   });
 }
-
 export { fetchitems };

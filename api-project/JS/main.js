@@ -69,7 +69,7 @@ function homeintro() {
     "beforeend",
 
     `<div data-aos="fade-up" class="display-card">
-      <h3 class="info">Welcome to the home </h3>
+      <h3 class="info">Welcome to the Home </h3>
     </div>
     
     <div data-aos="fade-up" class="display-card">
@@ -77,7 +77,7 @@ function homeintro() {
     <p>This website takes all its information from the pokemon api {poke api}.
     </p>
 
-    <p>The search bar is there for aesthetics </p>
+    <p>The search bar is there for aesthetics. It doens't work. </p>
   </div>`
   );
 }
@@ -96,8 +96,8 @@ function pokeintro() {
     "beforeend",
 
     `<div data-aos="fade-up" class="display-card">
-      <h3 class="info">Welcome to the PC </h3>
-      <p>There are about 150 pokemon present -> you can search them up</p>
+      <h3 class="info">Welcome to the PC</h3>
+      <p>There are about 150 pokemon present from the first generation of pokemon. </p>
     </div>`
   );
   fetchpokemon();
@@ -118,8 +118,8 @@ function shopintro() {
     "beforeend",
 
     `<div data-aos="fade-up" class="display-card">
-      <h3 class="info">Welcome to the SHOP </h3>
-      <p>There are about 200+ items present -> you can search them up</p>
+      <h3 class="info">Welcome to the shop </h3>
+      <p>All Items are currently displayed.</p>
     </div>`
   );
   fetchitems();
@@ -140,8 +140,8 @@ function regionintro() {
     "beforeend",
 
     `<div data-aos="fade-up" class="display-card">
-      <h3 class="info">Welcome to the MAP </h3>
-      <p>There are about 20 locations present -> you can search them up</p>
+      <h3 class="info">Welcome to the Map </h3>
+      <p>These are all the current locations. </p>
     </div>`
   );
   fetchlocations();

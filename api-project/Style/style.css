@@ -307,25 +307,49 @@ body{
   margin-right: 20px;
   font-size: 60px;
 }
-
-/* .arrow{
-  justify-content: center;
-  justify-content: space-around;
-  text-align: center;
-  align-items: center;
-  font-size: var(--h5);
-  padding: 30px;
-  margin: 2px;
-  width: 45%;
+/* loading animation */
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
   background-color: var(--tertiary);
-  border: none;
-  border-radius: 30px;
-  color: var(--primary);
-  transition: all 0.2s;
+  color:var(--tertiary);
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: 0.5s;
+}
+.dot-flashing::before, .dot-flashing::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--tertiary);
+  color: var(--tertiary);
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color:var(--tertiary);
+  color: var(--tertiary); 
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
 }
 
-.arrow:hover{
-  transform: translateY(-0.5rem);
-  background-color: var(--secondary);
-} */
-
+@keyframes dot-flashing {
+  0% {
+    background-color:var(--tertiary);
+  }
+  50%, 100% {
+    background-color: var(--secondary);
+  }
+}

@@ -2,6 +2,7 @@ document.getElementById("display").innerHTML = "";
 
 async function fetchpokemon() {
   let pokemons = [];
+  loading();
   for (let i = 1; i < 151; i++) {
     let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     const response = await fetch(url);
@@ -14,6 +15,24 @@ async function fetchpokemon() {
       pokemons.push(pokemon);
     }
   }
+
+  showpokemon(pokemons);
+}
+function loading() {
+  document.getElementById("display").insertAdjacentHTML(
+    "beforeend",
+
+    `<div class="col-3">
+    <div class="snippet">
+      <div class="stage">
+        <div class="dot-flashing"></div>
+      </div>
+    </div>
+  </div>`
+  );
+}
+function showpokemon(pokemons) {
+  document.getElementById("display").innerHTML = "";
   pokemons.forEach((pokemon) => {
     document.getElementById("display").insertAdjacentHTML(
       "beforeend",
